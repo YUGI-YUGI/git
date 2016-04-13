@@ -43,11 +43,11 @@
 					str=str+'<font  color="#'+issues[i].labels[j].color+'">'+issues[i].labels[j].name+'</font>' ;
 				}
 			}
-			str=str+'</td> <td><a href="'+issues[i].user.html_url+'"><img target="_blank"  src="'+issues[i].user.avatar_url+'" width="40px" height="40px"> <label style="display: block;"> '+issues[i].user.login+'</label></a></td></tr>';
+			str=str+'</td> <td ><a target="_blank" href="'+issues[i].user.html_url+'"><img src="'+issues[i].user.avatar_url+'" width="40px" height="40px"> <label style="display: block;"> '+issues[i].user.login+'</label></a></td></tr>';
 			
 		}
 				
-	
+	return str;
 	}
 	
 

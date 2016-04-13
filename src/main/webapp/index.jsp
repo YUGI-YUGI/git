@@ -16,7 +16,7 @@
 	    margin-bottom: 40px;
 }
 
-.zui-table thead th {
+.zui-table  th {
 	background-color: #DDEFEF;
 	border: solid 1px #DDEEEE;
 	color: #336B6B;
@@ -25,7 +25,7 @@
 	text-shadow: 1px 1px 1px #fff;
 }
 
-.zui-table tbody td {
+.zui-table  td {
 	border: solid 1px #DDEEEE;
 	color: #333;
 	padding: 10px;
@@ -39,6 +39,10 @@ ont-size: 24px;
     
     font {
     margin: 10px;
+}
+
+td:last-of-type {
+    text-align: center;
 }
 </style>
 
