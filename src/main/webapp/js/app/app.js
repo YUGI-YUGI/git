@@ -35,7 +35,7 @@
 		
 		var str="";
 		for(var i=0;i<issues.length;i++){
-			 str="<tr><td><a href='"+issues[i].html_url+">"+issues[i].number+"</a></td>";
+			 str=str+"<tr><td><a href='"+issues[i].html_url+"'>"+issues[i].number+"</a></td>";
 			str=str+"<td><time >"+issues[i].created_at+"</time></td>";
 			str=str+"<td><label >"+issues[i].title+"</label></td><td>";
 			if(issues[i].labels){
