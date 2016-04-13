@@ -33,7 +33,7 @@
 //    </tr>
 	var getTableData=function(issues){
 		
-		var str="<tr><th>Issue Id</th><th>Created at </th><th>Title</th><th></th>Labels</tr>";
+		var str="<tr><th>Issue Id</th><th>Created at </th><th>Title</th><th>Labels</th><th>User</th></tr>";
 		for(var i=0;i<issues.length;i++){
 			 str=str+"<tr><td><a target='_blank' href='"+issues[i].html_url+"'>"+issues[i].number+"</a></td>";
 			str=str+"<td><time >"+new Date(issues[i].created_at)+"</time></td>";
@@ -43,13 +43,11 @@
 					str=str+'<font  color="#'+issues[i].labels[j].color+'">'+issues[i].labels[j].name+'</font>' ;
 				}
 			}
-			str=str+"</td></tr>";
+			str=str+'</td> <td><a href="'+issues[i].user.html_url+'"><img target="_blank"  src="'+issues[i].user.avatar_url+'" width="40px" height="40px"> <label style="display: block;"> '+issues[i].user.login+'</label></a></td></tr>';
 			
 		}
-		return str;
-		
-		
-		
+				
+	
 	}
 	
 
