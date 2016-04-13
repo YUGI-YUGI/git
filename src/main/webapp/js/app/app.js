@@ -94,10 +94,10 @@
 				var allIssue=document.getElementById("allIssue");
 				
 				
-				document.getElementById("allopen").innerHTML(todayIssue.length +lastOneWeekIssue.length+oldIssue.length);
-				document.getElementById("open24").innerHTML(todayIssue.length );
-				document.getElementById("open7").innerHTML(lastOneWeekIssue.length);
-				ocument.getElementById("allIssue").innerHTML(oldIssue.length);
+				document.getElementById("allopen").innerHTML=todayIssue.length +lastOneWeekIssue.length+oldIssue.length;
+				document.getElementById("open24").innerHTML=todayIssue.length ;
+				document.getElementById("open7").innerHTML=lastOneWeekIssue.length;
+				ocument.getElementById("allIssue").innerHTML=oldIssue.length;
 				
 				
 				openissue.innerHTML=getTableData(todayIssue);	
