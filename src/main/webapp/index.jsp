@@ -36,6 +36,10 @@
 ont-size: 24px;
     color: red;
     font-weight: bold;}
+    
+    font {
+    margin: 10px;
+}
 </style>
 
 </head>

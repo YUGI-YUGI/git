@@ -33,9 +33,9 @@
 //    </tr>
 	var getTableData=function(issues){
 		
-		var str="";
+		var str="<tr><th>Issue Id</th><th>Created at </th><th>Title</th><th></th>Labels</tr>";
 		for(var i=0;i<issues.length;i++){
-			 str=str+"<tr><td><a href='"+issues[i].html_url+"'>"+issues[i].number+"</a></td>";
+			 str=str+"<tr><td><a target='_blank' href='"+issues[i].html_url+"'>"+issues[i].number+"</a></td>";
 			str=str+"<td><time >"+new Date(issues[i].created_at)+"</time></td>";
 			str=str+"<td><label >"+issues[i].title+"</label></td><td>";
 			if(issues[i].labels){
