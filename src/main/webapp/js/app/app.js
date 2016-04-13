@@ -89,7 +89,7 @@
 			}else{
 				
 				
-				var todayIssue=document.getElementById("#todayIssue");
+				var openissue=document.getElementById("#todayIssue");
 				var thisWeekIssue=document.getElementById("#thisWeekIssue");
 				var allIssue=document.getElementById("#allIssue");
 				
@@ -100,7 +100,7 @@
 				ocument.getElementById("#allIssue").innerHTML(oldIssue.length);
 				
 				
-				todayIssue.innerHTML=getTableData(todayIssue);	
+				openissue.innerHTML=getTableData(todayIssue);	
 				thisWeekIssue.innerHTML=getTableData(lastOneWeekIssue);
 				allIssue.innerHTML=getTableData(oldIssue);
 				
