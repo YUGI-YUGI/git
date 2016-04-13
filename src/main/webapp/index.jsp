@@ -41,20 +41,20 @@ ont-size: 24px;
 </head>
 <body>
 	<div>
-		total open issue <span id="allopen count"></span>
+		total open issue <span id="allopen" class="count"></span>
 	</div>
 	<div class="latestIssue"></div>
-	<label>Last 24 hour open issue <span id="open24 count"></span>
+	<label>Last 24 hour open issue <span id="open24" class="count"></span>
 	</label>
 	<table class="zui-table" id="todayIssue">
 
 	</table>
 
-	<label>Last 7 day open issue <span id="open7 count"></span></label>
+	<label>Last 7 day open issue <span id="open7" class="count"></span></label>
 	<table class="zui-table" id="thisWeekIssue">
 
 	</table>
-	<label>before 7 days open issue <span id="open30 count"></span></label>
+	<label>before 7 days open issue <span id="open30" class="count"></span></label>
 	<table class="zui-table" id="allIssue">
 
 	</table>
