@@ -39,8 +39,8 @@
 			str=str+"<td><time >"+issues[i].created_at+"</time></td>";
 			str=str+"<td><label >"+issues[i].title+"</label></td><td>";
 			if(issues[i].labels){
-				for(var j=0;j<issues[i].labels;j++){
-					str=str+'<span  bgcolor="#'+issues[i].labels[j].color+'">'+issues[i].labels[j].name+'</span>' ;
+				for(var j=0;j<issues[i].labels.length;j++){
+					str=str+'<span  color="#'+issues[i].labels[j].color+'">'+issues[i].labels[j].name+'</span>' ;
 				}
 			}
 			str=str+"</td></tr>";
