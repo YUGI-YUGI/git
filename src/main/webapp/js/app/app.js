@@ -23,6 +23,36 @@
 		 var data= xhttp.send();
 		  callBack(xhttp.response);	  
 	}
+//
+//    <tr>
+//        <td><a href="/home">123</a></td>
+//        <td>"2016-04-13T05:48:14Z"</td>
+//        <td>Not receiving build notification emails</td>
+//        <td><span  bgcolor="#207de5">open</span> <span  bgcolor="#207de5">close</span> </td>
+//       
+//    </tr>
+	var getTableData=function(issues){
+		
+		var str="";
+		for(var i=0;i<issues.length;i++){
+			 str="<tr><td><a href='"+issues[i].html_url+">"+issues[i].number+"</a></td>";
+			str=str+"<td><time >"+issues[i].created_at+"</time></td>";
+			str=str+"<td><label >"+issues[i].title+"</label></td><td>";
+			if(issues[i].labels){
+				for(var j=0;j<issues[i].labels;j++){
+					str=str+'<span  bgcolor="#'+issues[i].labels[j].color+'">'+issues[i].labels[j].name+'</span>' ;
+				}
+			}
+			str=str+"</td></tr>";
+			
+		}
+		return str;
+		
+		
+		
+	}
+	
+
 	
 	var callback=function(data){
 		try{
@@ -57,10 +87,24 @@
 			if(data.length > 29){
 				getListOfIssue(++page,"open",callback);
 			}else{
-				var body = document.getElementById("body");
-				if(body){
-					body.innerHTML="today open issue :"+todayIssue.length +", last week open :"+lastOneWeekIssue.length +",old isse :"+oldIssue.length;
-				}
+				
+				
+				var todayIssue=document.getElementById("#todayIssue");
+				var thisWeekIssue=document.getElementById("#thisWeekIssue");
+				var allIssue=document.getElementById("#allIssue");
+				
+				
+				document.getElementById("#allopen").innerHTML(todayIssue.length +lastOneWeekIssue.length+oldIssue.length);
+				document.getElementById("#open24").innerHTML(todayIssue.length );
+				document.getElementById("#open7").innerHTML(lastOneWeekIssue.length);
+				ocument.getElementById("#allIssue").innerHTML(oldIssue.length);
+				
+				
+				todayIssue.innerHTML=getTableData(todayIssue);	
+				thisWeekIssue.innerHTML=getTableData(lastOneWeekIssue);
+				allIssue.innerHTML=getTableData(oldIssue);
+				
+				
 			}
 			
 
@@ -68,6 +112,10 @@
 			
 		}
 	}
+	
+	
+	
+	
 	
 	
 	getListOfIssue(page,"open",callback);
