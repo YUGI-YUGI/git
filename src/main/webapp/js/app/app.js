@@ -36,11 +36,11 @@
 		var str="";
 		for(var i=0;i<issues.length;i++){
 			 str=str+"<tr><td><a href='"+issues[i].html_url+"'>"+issues[i].number+"</a></td>";
-			str=str+"<td><time >"+issues[i].created_at+"</time></td>";
+			str=str+"<td><time >"+new Date(issues[i].created_at)+"</time></td>";
 			str=str+"<td><label >"+issues[i].title+"</label></td><td>";
 			if(issues[i].labels){
 				for(var j=0;j<issues[i].labels.length;j++){
-					str=str+'<span  color="#'+issues[i].labels[j].color+'">'+issues[i].labels[j].name+'</span>' ;
+					str=str+'<font  color="#'+issues[i].labels[j].color+'">'+issues[i].labels[j].name+'</font>' ;
 				}
 			}
 			str=str+"</td></tr>";

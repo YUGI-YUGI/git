@@ -13,6 +13,7 @@
 	border-collapse: collapse;
 	border-spacing: 0;
 	font: normal 13px Arial, sans-serif;
+	    margin-bottom: 40px;
 }
 
 .zui-table thead th {
@@ -30,25 +31,30 @@
 	padding: 10px;
 	text-shadow: 1px 1px 1px #fff;
 }
+
+.count{
+ont-size: 24px;
+    color: red;
+    font-weight: bold;}
 </style>
 
 </head>
 <body>
 	<div>
-		total open issue <span id="allopen"></span>
+		total open issue <span id="allopen count"></span>
 	</div>
 	<div class="latestIssue"></div>
-	<label>Last 24 hour open issue <span id="open24"></span>
+	<label>Last 24 hour open issue <span id="open24 count"></span>
 	</label>
 	<table class="zui-table" id="todayIssue">
 
 	</table>
 
-	<label>Last 7 day open issue <span id="open7"></span></label>
+	<label>Last 7 day open issue <span id="open7 count"></span></label>
 	<table class="zui-table" id="thisWeekIssue">
 
 	</table>
-	<label>before 7 days open issue <span id="open30"></span></label>
+	<label>before 7 days open issue <span id="open30 count"></span></label>
 	<table class="zui-table" id="allIssue">
 
 	</table>
