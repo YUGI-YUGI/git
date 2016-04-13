@@ -12,27 +12,37 @@
 //		console.log(issues);
 //	});
 	
+	
+	var github = new Github();
 	var listOfIssues=[];
 	var todayIssue=[];
 	var lastOneWeekIssue=[];
 	var oldIssue=[];
 	var page=1;
+	//fetch the 30 issue per request
 	var getListOfIssue=function(pageNumber,state,callBack){
 		 var xhttp = new XMLHttpRequest();
+		 
+		 /*
+		  * api has issue while fetching issue list
+		  * 1)https://github.com/michael/github/issues/305   ==>issues.list() not working 
+		  * 2)https://github.com/michael/github/issues/292   
+		  * 
+		  * 
+		  * 
+		  * */
 		  xhttp.open("GET", "https://api.github.com/repositories/17531908/issues?page="+pageNumber+"&state="+state, false);
 		 var data= xhttp.send();
 		  callBack(xhttp.response);	  
 	}
-//
-//    <tr>
-//        <td><a href="/home">123</a></td>
-//        <td>"2016-04-13T05:48:14Z"</td>
-//        <td>Not receiving build notification emails</td>
-//        <td><span  bgcolor="#207de5">open</span> <span  bgcolor="#207de5">close</span> </td>
-//       
-//    </tr>
+
+	
+	/* create dynamic table content 
+	 * it take issue list and return table content 
+	 * 
+	 * 
+	 */
 	var getTableData=function(issues){
-		
 		var str="<tr><th>Issue Id</th><th>Created at </th><th>Title</th><th>Labels</th><th>User</th></tr>";
 		for(var i=0;i<issues.length;i++){
 			 str=str+"<tr><td><a target='_blank' href='"+issues[i].html_url+"'>"+issues[i].number+"</a></td>";
@@ -85,8 +95,6 @@
 			if(data.length > 29){
 				getListOfIssue(++page,"open",callback);
 			}else{
-				
-				
 				var openissue=document.getElementById("todayIssue");
 				var thisWeekIssue=document.getElementById("thisWeekIssue");
 				var allIssue=document.getElementById("allIssue");
@@ -110,22 +118,10 @@
 			
 		}
 	}
-	
-	
-	
-	
-	
-	
+
+	//hiding github api
 	getListOfIssue(page,"open",callback);
 
-	
-	
-
-	
-	
-	
-	
-	
 })()
 
 

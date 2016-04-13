@@ -13,7 +13,7 @@
 	border-collapse: collapse;
 	border-spacing: 0;
 	font: normal 13px Arial, sans-serif;
-	    margin-bottom: 40px;
+	margin-bottom: 40px;
 }
 
 .zui-table  th {
@@ -32,17 +32,18 @@
 	text-shadow: 1px 1px 1px #fff;
 }
 
-.count{
-ont-size: 24px;
-    color: red;
-    font-weight: bold;}
-    
-    font {
-    margin: 10px;
+.count {
+	ont-size: 24px;
+	color: red;
+	font-weight: bold;
+}
+
+font {
+	margin: 10px;
 }
 
 td:last-of-type {
-    text-align: center;
+	text-align: center;
 }
 </style>
 
